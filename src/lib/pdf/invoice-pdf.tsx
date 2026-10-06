@@ -16,7 +16,7 @@ const s = StyleSheet.create({
   between: { flexDirection: "row", justifyContent: "space-between" },
 
   from: { maxWidth: 260 },
-  logo: { maxWidth: 110, maxHeight: 54, objectFit: "contain", marginBottom: 10 },
+  logo: { maxWidth: 110, maxHeight: 54, objectFit: "contain", objectPosition: "left", alignSelf: "flex-start", marginBottom: 10 },
   logoFallback: { width: 46, height: 46, borderRadius: 23, backgroundColor: "#111111", alignItems: "center", justifyContent: "center", marginBottom: 10 },
   logoInitial: { color: "#ffffff", fontSize: 22, fontFamily: "Helvetica-Bold" },
   bizName: { fontSize: 10, fontFamily: "Helvetica-Bold", marginBottom: 2 },

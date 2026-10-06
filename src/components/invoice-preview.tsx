@@ -33,7 +33,7 @@ export function InvoicePreview({
           <div className="max-w-xs">
             {profile.logoDataUrl ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={profile.logoDataUrl} alt="" className="mb-3 max-h-16 max-w-36 object-contain" />
+              <img src={profile.logoDataUrl} alt="" className="mb-3 max-h-16 max-w-36 object-contain object-left" />
             ) : (
               <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-neutral-900 text-2xl font-bold text-white">
                 {name.trim().charAt(0).toUpperCase()}
