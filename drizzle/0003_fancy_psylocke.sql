@@ -1,0 +1,1 @@
+ALTER TABLE "business_profiles" ADD COLUMN "show_signature" boolean DEFAULT true NOT NULL;

@@ -121,8 +121,17 @@ export function SettingsForm({ profile }: { profile: BusinessProfile }) {
 
       <Section
         title="Signature"
-        description="Printed above “Authorized Signatory” on invoices. Leave empty to sign printed invoices by hand."
+        description="Printed above “Authorized Signature” on invoices. Leave the image empty to sign printed invoices by hand."
       >
+        <label className="flex items-center gap-2.5 text-sm font-medium text-slate-700">
+          <input
+            type="checkbox"
+            name="showSignature"
+            defaultChecked={profile.showSignature}
+            className="h-4 w-4 rounded border-slate-300 text-indigo-600"
+          />
+          Show the Authorized Signature section on invoices
+        </label>
         <ImageField
           name="signature"
           label="Signature"

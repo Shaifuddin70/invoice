@@ -36,7 +36,10 @@ export async function saveProfile(_: FormState, formData: FormData): Promise<For
   const parsed = ProfileSchema.safeParse(Object.fromEntries(formData));
   if (!parsed.success) return { errors: z.flattenError(parsed.error).fieldErrors };
 
-  const update: Partial<typeof businessProfiles.$inferInsert> = { ...parsed.data };
+  const update: Partial<typeof businessProfiles.$inferInsert> = {
+    ...parsed.data,
+    showSignature: formData.get("showSignature") === "on",
+  };
 
   const images = [
     { field: "logo", label: "Logo", key: "logoDataUrl" },

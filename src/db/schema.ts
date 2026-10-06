@@ -39,6 +39,7 @@ export const businessProfiles = pgTable("business_profiles", {
   taxId: text("tax_id").notNull().default(""),
   logoDataUrl: text("logo_data_url"),
   signatureDataUrl: text("signature_data_url"),
+  showSignature: boolean("show_signature").notNull().default(true),
   paymentDetails: text("payment_details").notNull().default(""),
   defaultCurrency: text("default_currency").notNull().default("USD"),
   defaultTaxRate: numeric("default_tax_rate", { precision: 6, scale: 3, mode: "number" })

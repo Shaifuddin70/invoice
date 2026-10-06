@@ -119,13 +119,35 @@ export function Sidebar({
           })}
         </nav>
         <div className="border-t border-slate-200 p-4">
-          <p className="truncate text-sm font-medium text-slate-900">{userName}</p>
-          <p className="truncate text-xs text-slate-500">{userEmail}</p>
-          <form action={logout} className="mt-3">
-            <button type="submit" className="btn-secondary w-full py-1.5 text-xs">
-              Log out
-            </button>
-          </form>
+          <Link
+            href="/account"
+            onClick={() => setOpen(false)}
+            className={`-mx-2 flex items-center gap-3 rounded-lg px-2 py-1.5 transition-colors ${
+              pathname === "/account" ? "bg-indigo-50" : "hover:bg-slate-50"
+            }`}
+          >
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-200 text-xs font-semibold text-slate-700">
+              {userName
+                .split(/\s+/)
+                .slice(0, 2)
+                .map((w) => w.charAt(0).toUpperCase())
+                .join("")}
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="truncate text-sm font-medium text-slate-900">{userName}</p>
+              <p className="truncate text-xs text-slate-500">{userEmail}</p>
+            </div>
+          </Link>
+          <div className="mt-3 grid grid-cols-2 gap-2">
+            <Link href="/account" onClick={() => setOpen(false)} className="btn-secondary py-1.5 text-xs">
+              Edit profile
+            </Link>
+            <form action={logout}>
+              <button type="submit" className="btn-secondary w-full py-1.5 text-xs">
+                Log out
+              </button>
+            </form>
+          </div>
         </div>
       </aside>
     </>
